@@ -1,0 +1,259 @@
+<div class="container mt-5">
+  <h1 style="text-align: center">Ajouter un nouveau compte admin</h1>
+
+</div>
+
+<div class="container mt-5 col-8">
+  <form role="form" [formGroup]="addadmin">
+
+    <div class="row d-flex justify-content-around">
+
+      <!--nom-->
+      <div class="mb-4 col-5">
+        <label for="inputNom" class="form-label">Nom :</label>
+        <input type="text" class="form-control" id="inputNom" aria-describedby="emailHelp" name="nom" [ngClass]="(this.addadmin.controls.nom.invalid) ? 'is-invalid' : 'is-valid'"  formControlName='nom'>
+
+        <!--controle nom-->
+
+        <div *ngIf="this.addadmin.controls.nom?.invalid && (this.addadmin.controls.nom?.dirty || this.addadmin.controls.nom?.touched)" style="color:red">
+
+          <div *ngIf="this.addadmin.controls.nom?.errors?.['required']" >
+            Le nom est obligatoire
+          </div>
+          <div *ngIf="this.addadmin.controls.nom?.errors?.['minlength']">
+            Le nom doit comporter au moins 4 characters .
+          </div>
+          <div *ngIf="this.addadmin.controls.nom?.errors?.['maxlength']">
+            Le nom doit comporter au plus 30 characters .
+          </div>
+        </div>
+
+      </div>
+
+
+      <!--prenom-->
+      <div class="mb-4 col-5">
+        <label for="inputPrenom" class="form-label">Prenom :</label>
+        <input type="text" class="form-control" id="inputPrenom" name="prenom" [ngClass]="(this.addadmin.controls.prenom.invalid) ? 'is-invalid' : 'is-valid'" formControlName='prenom'>
+
+        <!--controle nom-->
+
+        <div *ngIf="this.addadmin.controls.prenom?.invalid && (this.addadmin.controls.prenom?.dirty || this.addadmin.controls.prenom?.touched)" style="color:red">
+
+          <div *ngIf="this.addadmin.controls.prenom?.errors?.['required']" >
+            Le prenom est obligatoire
+          </div>
+          <div *ngIf="this.addadmin.controls.prenom?.errors?.['minlength']">
+            Le prenom doit comporter au moins 4 characters .
+          </div>
+          <div *ngIf="this.addadmin.controls.prenom?.errors?.['maxlength']">
+            Le prenom doit comporter au plus 30 characters .
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="row d-flex justify-content-around mt-4">
+
+      <!--username-->
+      <div class="mb-4 col-5">
+        <label for="username" class="form-label">Username :</label>
+        <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" [ngClass]="(this.addadmin.controls.username.invalid) ? 'is-invalid' : 'is-valid'" formControlName='username'>
+
+        <!--controle username-->
+
+        <div *ngIf="this.addadmin.controls.username?.invalid && (this.addadmin.controls.username?.dirty || this.addadmin.controls.username?.touched)" style="color:red">
+
+          <div *ngIf="this.addadmin.controls.username?.errors?.['required']" >
+            Le username est obligatoire
+          </div>
+          <div *ngIf="this.addadmin.controls.username?.errors?.['minlength']">
+            Le username doit comporter au moins 4 characters .
+          </div>
+          <div *ngIf="this.addadmin.controls.username?.errors?.['maxlength']">
+            Le username doit comporter au plus 50 characters .
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mb-4 col-5">
+
+        <!--password-->
+
+        <label for="inputPassword" class="form-label">Mot de passe :</label>
+        <input type="password" class="form-control" id="inputPassword" name="password" [ngClass]="(this.addadmin.controls.password.invalid) ? 'is-invalid' : 'is-valid'" formControlName='password'>
+
+        <!--controle password-->
+
+        <div *ngIf="this.addadmin.controls.password?.invalid && (this.addadmin.controls.password?.dirty || this.addadmin.controls.password?.touched)" style="color:red">
+
+          <div *ngIf="this.addadmin.controls.password?.errors?.['required']" >
+            Le password est obligatoire
+          </div>
+          <div *ngIf="this.addadmin.controls.password?.errors?.['minlength']">
+            Le password doit comporter au moins 8 characters .
+          </div>
+          <div *ngIf="this.addadmin.controls.password?.errors?.['maxlength']">
+            Le password doit comporter au plus 50 characters .
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="row d-flex justify-content-around mt-4">
+
+      <!--email-->
+
+      <div class="mb-4 col-5">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" [ngClass]="(this.addadmin.controls.email.invalid) ? 'is-invalid' : 'is-valid'" formControlName='email'>
+
+        <!--controle email-->
+
+        <div *ngIf="this.addadmin.controls.email?.errors?.['required']" >
+          L'email  est obligatoire
+        </div>
+        <div *ngIf="this.addadmin.controls.email?.errors?.['email']">
+          Cette adresse email n'est pas valide!
+        </div>
+
+
+      </div>
+
+
+      <!--cin-->
+      <div class="mb-4 col-5">
+        <label for="CIN" class="form-label">CIN :</label>
+        <input type="number" class="form-control" id="CIN" name="cin" [ngClass]="(this.addadmin.controls.cin.invalid) ? 'is-invalid' : 'is-valid'" formControlName='cin'>
+
+        <!--controle cin-->
+
+        <div *ngIf="this.addadmin.controls.cin?.invalid && (this.addadmin.controls.cin?.dirty || this.addadmin.controls.cin?.touched)" style="color:red">
+
+          <div *ngIf="this.addadmin.controls.cin?.errors?.['required']" >
+            Le CIN est obligatoire
+          </div>
+          <div *ngIf="this.addadmin.controls.cin?.errors?.['minlength']">
+            Le CIN doit comporter au moins 8 characters .
+          </div>
+          <div *ngIf="this.addadmin.controls.cin?.errors?.['maxlength']">
+            Le CIN doit comporter au plus 8 characters .
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="row d-flex justify-content-around mt-4">
+
+      <!--adresse-->
+
+      <div class="mb-4 col-5">
+        <label for="adresse" class="form-label">Adresse :</label>
+        <input type="text" class="form-control" id="adresse" aria-describedby="emailHelp" name="adresse" [ngClass]="(this.addadmin.controls.adresse.invalid) ? 'is-invalid' : 'is-valid'" formControlName='adresse'>
+
+        <!--controle adresse-->
+
+        <div *ngIf="this.addadmin.controls.adresse?.invalid && (this.addadmin.controls.adresse?.dirty || this.addadmin.controls.adresse?.touched)" style="color:red">
+
+          <div *ngIf="this.addadmin.controls.adresse?.errors?.['required']" >
+            L'adresse est obligatoire.
+          </div>
+          <div *ngIf="this.addadmin.controls.adresse?.errors?.['minlength']">
+            L'adresse doit comporter au moins 5 characters .
+          </div>
+          <div *ngIf="this.addadmin.controls.adresse?.errors?.['maxlength']">
+            L'adresse doit comporter au plus 30 characters .
+          </div>
+        </div>
+
+      </div>
+
+      <!--telephone-->
+      <div class="mb-4 col-5">
+        <label for="Telephone" class="form-label">Telephone :</label>
+        <input type="number" class="form-control" id="Telephone" name="telephone" [ngClass]="(this.addadmin.controls.telephone.invalid) ? 'is-invalid' : 'is-valid'" formControlName='telephone'>
+
+        <!--controle telephone-->
+
+        <div *ngIf="this.addadmin.controls.telephone?.invalid && (this.addadmin.controls.telephone?.dirty || this.addadmin.controls.telephone?.touched)" style="color:red">
+
+          <div *ngIf="this.addadmin.controls.telephone?.errors?.['required']" >
+            Le telephone est obligatoire
+          </div>
+          <div *ngIf="this.addadmin.controls.telephone?.errors?.['minlength']">
+            Le telephone doit comporter au moins 8 characters .
+          </div>
+          <div *ngIf="this.addadmin.controls.telephone?.errors?.['maxlength']">
+            Le telephone doit comporter au plus 8 characters .
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-around mt-4">
+
+      <!--date naissance-->
+
+      <div class="mb-4 col-7">
+        <label for="dateNaissance" class="form-label">Date de naissance :</label>
+        <input type="date" class="form-control" id="dateNaissance" aria-describedby="emailHelp" name="dateNaissance" [ngClass]="(this.addadmin.controls.dateNaissance.invalid) ? 'is-invalid' : 'is-valid'" formControlName='dateNaissance'>
+
+        <!--controle date naissance-->
+
+        <div *ngIf="this.addadmin.controls.dateNaissance?.invalid && (this.addadmin.controls.dateNaissance?.dirty || this.addadmin.controls.dateNaissance?.touched)" style="color:red">
+
+          <div *ngIf="this.addadmin.controls.dateNaissance?.errors?.['required']" >
+            La de date naissance est obligatoire
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--role-->
+
+    <div class="row d-flex justify-content-around mt-4">
+      <div class="col-sm-6">
+
+        <div class="form-group">
+          <label>Role</label>
+          <select class="form-control" formControlName='rol'>
+            <option *ngFor="let role of roles" [ngValue]="role"  >{{role}}</option>
+
+          </select>
+
+          <div *ngIf="this.addadmin.controls.rol?.invalid && (this.addadmin.controls.rol?.dirty || this.addadmin.controls.rol?.touched)" style="color:red">
+
+            <div *ngIf="this.addadmin.controls.rol?.errors?.['required']" >
+              Role du compte obligatoire !
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="d-flex justify-content-around mb-5">
+
+      <button type="button" class="btn btn-success mt-4 mb-5" [disabled]='addadmin.invalid' (click)="addAdmin(admin)" [routerLink]="['../']">Ajouter</button>
+      <button class="btn btn-danger mt-4 mb-5" [routerLink]="['../']" >Retour</button>
+
+    </div>
+  </form>
+</div>

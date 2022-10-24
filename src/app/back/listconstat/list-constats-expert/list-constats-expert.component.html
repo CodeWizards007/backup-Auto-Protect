@@ -1,0 +1,57 @@
+
+<div class="card-body">
+
+  <table id="TD" class="table table-bordered table-hover table-striped table-responsive "  >
+
+    <thead>
+
+    <tr >
+
+      <th class="testTd" >
+        Fautif
+      </th>
+      <th class="testTd" >
+        Status Rembourssement
+      </th>
+      <th class="testTd" >
+        Agence
+      </th>
+      <th class="testTd" >
+        Date Accidents
+      </th>
+      <th class="testTd" >Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd" *ngFor="let c of constats">
+
+      <td class="dtr-control sorting_1 testTd" ><span >{{c.fautif}}</span></td>
+      <td class="testTd" ><span >{{c.statusRembourssement}}</span></td>
+      <td class="testTd" ><span >{{c.agence}}</span></td>
+      <td class="testTd" ><span >{{c.dateAccidents | date}}</span></td>
+      <td ><button class="testTd"  [routerLink]="['edit',c._id]"  class="button-29"  >Modifier</button><button class="testTd"  [routerLink]="['devis',c._id]"  class="button-29"  >Devis</button> <button class="button-29" [routerLink]="['ajouterRapport',c._id]" >Ajouter Rapport</button></td>
+    </tr>
+
+    </tbody>
+    <tfoot>
+    <tr >
+
+      <th class="testTd" >
+        Fautif
+      </th>
+      <th class="testTd" >
+        Status Rembourssement
+      </th>
+      <th class="testTd" >
+        Agence
+      </th>
+      <th class="testTd" >
+        Date Accidents
+      </th>
+      <th class="testTd" >Actions</th>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+
+

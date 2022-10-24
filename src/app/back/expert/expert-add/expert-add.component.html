@@ -1,0 +1,184 @@
+<div class="card card-warning">
+
+  <div class="card-header">
+    <h3 class="card-title">Ajouter Expert</h3>
+  </div>
+
+  <div class="card-body">
+    <form role="form" [formGroup]="addexpert">
+
+
+
+
+      <div class="form-group">
+        <label class="col-form-label" for="us"> Username</label>
+        <input type="text" class="form-control " [ngClass]="(this.addexpert.controls.username.invalid) ? 'is-invalid' : 'is-valid'"   id="us" placeholder="Entrer ..." required="required" name="username" formControlName='username' >
+        <div *ngIf="this.addexpert.controls.username?.invalid && (this.addexpert.controls.username?.dirty || this.addexpert.controls.username?.touched)" style="color:red">
+
+          <div *ngIf="this.addexpert.controls.username?.errors?.['required']" >
+            Nom D'utilisateur est obligatoir
+          </div>
+          <div *ngIf="this.addexpert.controls.username?.errors?.['minlength']">
+            Nom D'utilisateur au moins 4 characters .
+          </div>
+          <div *ngIf="this.addexpert.controls.username?.errors?.['maxlength']">
+            Nom D'utilisateur au plus 50 characters .
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-form-label" for="us"> Password</label>
+        <input type="text" class="form-control " [ngClass]="(this.addexpert.controls.password.invalid) ? 'is-invalid' : 'is-valid'"   id="us" placeholder="Entrer ..." required="required" name="password" formControlName='password' >
+        <div *ngIf="this.addexpert.controls.password?.invalid && (this.addexpert.controls.password?.dirty || this.addexpert.controls.password?.touched)" style="color:red">
+
+          <div *ngIf="this.addexpert.controls.password?.errors?.['required']" >
+            Mot De Passe est obligatoir
+          </div>
+          <div *ngIf="this.addexpert.controls.password?.errors?.['minlength']">
+            Mot De Passe au moins 8 characters .
+          </div>
+          <div *ngIf="this.addexpert.controls.password?.errors?.['maxlength']">
+            Mot De Passe au plus 50 characters .
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label class="col-form-label" for="no"> Nom</label>
+        <input type="text" class="form-control " [ngClass]="(this.addexpert.controls.nom.invalid) ? 'is-invalid' : 'is-valid'"   id="no" placeholder="Entrer ..." required="required" name="nom" formControlName='nom' >
+        <div *ngIf="this.addexpert.controls.nom?.invalid && (this.addexpert.controls.nom?.dirty || this.addexpert.controls.nom?.touched)" style="color:red">
+
+          <div *ngIf="this.addexpert.controls.nom?.errors?.['required']" >
+            Nom  est obligatoir
+          </div>
+          <div *ngIf="this.addexpert.controls.nom?.errors?.['minlength']">
+            Nom  au moins 3 characters .
+          </div>
+          <div *ngIf="this.addexpert.controls.nom?.errors?.['maxlength']">
+            Nom  au plus 30 characters .
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label class="col-form-label" for="pr"> Prenom</label>
+        <input type="text" class="form-control " [ngClass]="(this.addexpert.controls.prenom.invalid) ? 'is-invalid' : 'is-valid'"   id="pr" placeholder="Entrer ..." required="required" name="prenom" formControlName='prenom' >
+        <div *ngIf="this.addexpert.controls.prenom?.invalid && (this.addexpert.controls.prenom?.dirty || this.addexpert.controls.prenom?.touched)" style="color:red">
+
+          <div *ngIf="this.addexpert.controls.prenom?.errors?.['required']" >
+            Prenom  est obligatoir
+          </div>
+          <div *ngIf="this.addexpert.controls.prenom?.errors?.['minlength']">
+            Prenom  au moins 3 characters .
+          </div>
+          <div *ngIf="this.addexpert.controls.prenom?.errors?.['maxlength']">
+            Prenom  au plus 30 characters .
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label class="col-form-label" for="pr"> CIN</label>
+        <input type="text" class="form-control " [ngClass]="(this.addexpert.controls.cin.invalid) ? 'is-invalid' : 'is-valid'"   id="pr" placeholder="Entrer ..." required="required" name="cin" formControlName='cin' >
+        <div *ngIf="this.addexpert.controls.cin?.invalid && (this.addexpert.controls.cin?.dirty || this.addexpert.controls.cin?.touched)" style="color:red">
+
+          <div *ngIf="this.addexpert.controls.cin?.errors?.['required']" >
+            CIN  est obligatoir
+          </div>
+          <div *ngIf="this.addexpert.controls.cin?.errors?.['minlength']">
+            CIN  au moins 8 characters .
+          </div>
+          <div *ngIf="this.addexpert.controls.cin?.errors?.['maxlength']">
+            CIN  au plus 8 characters .
+          </div>
+        </div>
+
+      </div>
+
+<div class="form-group">
+        <label class="col-form-label" for="pr"> Adresse</label>
+        <input type="text" class="form-control " [ngClass]="(this.addexpert.controls.adresse.invalid) ? 'is-invalid' : 'is-valid'"   id="pr" placeholder="Entrer ..." required="required" name="adresse" formControlName='adresse' >
+        <div *ngIf="this.addexpert.controls.cin?.invalid && (this.addexpert.controls.adresse?.dirty || this.addexpert.controls.adresse?.touched)" style="color:red">
+
+          <div *ngIf="this.addexpert.controls.adresse?.errors?.['required']" >
+            Adresse  est obligatoir
+          </div>
+          <div *ngIf="this.addexpert.controls.adresse?.errors?.['minlength']">
+            Adresse  au moins 5 characters .
+          </div>
+          <div *ngIf="this.addexpert.controls.adresse?.errors?.['maxlength']">
+            Adresse  au plus 30 characters .
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="form-group">
+        <label class="col-form-label" for="em"> Email</label>
+        <input type="text" class="form-control " [ngClass]="(this.addexpert.controls.email.invalid) ? 'is-invalid' : 'is-valid'"   id="em" placeholder="Entrer ..." required="required" name="email" formControlName='email' >
+        <div *ngIf="this.addexpert.controls.email?.invalid && (this.addexpert.controls.email?.dirty || this.addexpert.controls.email?.touched)" style="color:red">
+
+          <div *ngIf="this.addexpert.controls.email?.errors?.['required']" >
+            Email  est obligatoir
+          </div>
+          <div *ngIf="this.addexpert.controls.email?.errors?.['email']">
+            Ce Mail N'est Pas Valide
+          </div>
+
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label class="col-form-label" for="em"> Telephone</label>
+        <input type="text" class="form-control " [ngClass]="(this.addexpert.controls.telephone.invalid) ? 'is-invalid' : 'is-valid'"   id="em" placeholder="Entrer ..." required="required" name="telephone" formControlName='telephone' >
+        <div *ngIf="this.addexpert.controls.telephone?.invalid && (this.addexpert.controls.telephone?.dirty || this.addexpert.controls.telephone?.touched)" style="color:red">
+
+          <div *ngIf="this.addexpert.controls.telephone?.errors?.['required']" >
+            Obligatoire *
+          </div>
+          <div *ngIf="this.addexpert.controls.telephone?.errors?.['minlength']">
+            Entrez 8 Numéros au moins.
+          </div>
+          <div *ngIf="this.addexpert.controls.telephone?.errors?.['maxlength']">
+            Entrez 12 Numéros Au Plus.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-6">
+
+          <div class="form-group">
+            <label>Role</label>
+            <select class="form-control" formControlName='rol'>
+              <option *ngFor="let role of roles" [ngValue]="role"  >{{role}}</option>
+
+            </select>
+
+            <div *ngIf="this.addexpert.controls.rol?.invalid && (this.addexpert.controls.rol?.dirty || this.addexpert.controls.rol?.touched)" style="color:red">
+
+              <div *ngIf="this.addexpert.controls.rol?.errors?.['required']" >
+                Role du Consultant Obligatoire !
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <input type="submit" class="button-29" value=" Ajouter " style="margin-left: 300px" [disabled]='addexpert.invalid' (click)="addExpert(expert)"/>
+      <button class="button-29" style="margin-left: 20px" [routerLink]="['../']" >Retour</button>
+    </form>
+  </div>
+
+</div>

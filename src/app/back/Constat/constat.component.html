@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>Gestion des constats</h1>
+  <form>
+    <fieldset>
+      <legend>Ajouter un constat</legend>
+
+      <div class="form-group">
+        <label for="nom">Titre </label>
+        <input type="text" class="form-control" id="nom" placeholder="titre du constat">
+      </div>
+
+      <div class="form-group">
+        <label for="date-accident">Date d'accident</label>
+        <input type="date" class="form-control" id="date-accident">
+      </div>
+      <div class="form-group">
+        <label for="gouvernement">gouvernement</label>
+        <input type="text" class="form-control" id="gouvernement">
+      </div>
+      <div class="form-group">
+        <label for="cite">cite</label>
+        <input type="text" class="form-control" id="cite">
+      </div>
+      <div class="form-group">
+        <label for="rue">rue</label>
+        <input type="text" class="form-control" id="rue">
+      </div>
+
+
+      <div class="form-group">
+        <label for="selection">status</label>
+        <select id="selection" class="form-control">
+          <option value="">fautif</option>
+          <option value="1">non-fautif</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="images">Images</label>
+        <input type="file"  class="form-control" id="images" >
+      </div>
+        <input type="submit"  class="btn btn-danger" id="submit" >
+
+    </fieldset>
+  </form>
+</div>

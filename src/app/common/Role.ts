@@ -1,0 +1,5 @@
+export enum Role
+{
+  ROLE_EXPERT,ROLE_ADMIN,
+  ROLE_RESPONSABLE
+}

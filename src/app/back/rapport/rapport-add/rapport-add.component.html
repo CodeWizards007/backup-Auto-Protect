@@ -1,0 +1,25 @@
+<div class="card card-warning">
+
+  <div class="card-header">
+    <h3 class="card-title">Ajouter une Salle D'attente</h3>
+  </div>
+
+  <div class="card-body">
+    <form role="form" [formGroup]="add">
+
+      <div class="form-group">
+        <label class="col-form-label" for="no"> Montant a Rembourser</label>
+        <input type="number" class="form-control " [ngClass]="(this.add.controls.montant.invalid) ? 'is-invalid' : 'is-valid'"   id="no" placeholder="Entrer ..." required="required" name="montant" formControlName='montant' >
+      </div>
+      <div class="form-group">
+        <label class="col-form-label" for="pr"> Conclusion</label>
+        <input type="text" class="form-control " [ngClass]="(this.add.controls.remarque.invalid) ? 'is-invalid' : 'is-valid'"   id="pr" placeholder="Entrer ..." required="required" name="remarque" formControlName='remarque' >
+      </div>
+
+
+      <input type="submit" class="button-29" value=" Ajouter " style="margin-left: 300px" [disabled]='add.invalid' (click)="addRapport(rapport)"/>
+      <button class="button-29" style="margin-left: 20px" [routerLink]="['../../']" >Retour</button>
+    </form>
+  </div>
+
+</div>

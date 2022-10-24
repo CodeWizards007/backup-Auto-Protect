@@ -1,0 +1,56 @@
+<button style="margin-left:37%;margin-top:2%;" class="button-84" [routerLink]="['add']" >Nouveau Examen</button>
+<div class="card-body">
+
+  <table id="exams" class="table table-bordered table-hover table-striped "  >
+
+    <thead>
+
+    <tr>
+
+      <th class="testTd" >
+        Titre
+      </th>
+      <th class="testTd" >
+        Montant
+      </th>
+<th class="testTd" >
+  Status
+      </th>
+
+      <th width="30%" class="testTd" >Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd" *ngFor="let e of devis">
+
+      <td tabindex="0" class="dtr-control sorting_1 testTd">{{e.titre}}</td>
+      <td class="testTd">{{e.montant}} DT</td>
+      <td class="testTd">{{e.status}}</td>
+
+
+       <td><button class="button-29" style="margin-left:2%" (click)="conf(e)">Confirmer</button><button class="button-29" style="margin-left:2%" (click)="ref(e)">Refuser</button></td>
+    </tr>
+
+    </tbody>
+    <tfoot>
+    <tr>
+
+      <th class="testTd" >
+        Titre
+      </th>
+      <th class="testTd" >
+        Montant
+      </th>
+      <th class="testTd" >
+        Status
+      </th>
+
+      <th width="30%" class="testTd" >Actions</th>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+
+
+
+

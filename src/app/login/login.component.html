@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <h1 style="text-align: center">Bienvenue à Auto-Protect</h1>
+  <h2 style="text-align: center">veillez vous connecter</h2>
+</div>
+
+<div class="container mt-5 col-5">
+  <form>
+    <div class="mb-4">
+      <label for="exampleInputEmail1" class="form-label">Username :</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="loginRequest.username" [(ngModel)]='loginRequest.username'>
+    </div>
+
+    <div class="mb-4">
+      <label for="exampleInputPassword1" class="form-label">Mot de passe :</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="loginRequest.password" [(ngModel)] = 'loginRequest.password'>
+      <div id="emailHelp" class="form-text">NB : il ne faut jamais partager vos info!</div>
+    </div>
+
+
+    <div class="mb-5">
+      <label>Veillez sélectionner le type de votre compte</label>
+      <select class="form-select" aria-label="Default select example" name="typeutilisateur" [(ngModel)]="typeutilisateur">
+        <option [value]="1" >Client</option>
+        <option [value]="2">Employé d'agence</option>
+        <option [value]="3">Expert</option>
+        <option [value]="4">Responsable de siège</option>
+        <option [value]="5">Administrateur</option>
+      </select>
+    </div>
+
+    <div class="d-flex justify-content-around">
+
+      <button type="button" class="btn btn-success mt-4" (click)="loginExpert()" *ngIf="typeutilisateur=='3'" >Se connecter</button>
+      <button type="button" class="btn btn-success mt-4" (click)="loginAdmin()" *ngIf="typeutilisateur=='5'" >Se connecter</button>
+
+    </div>
+  </form>
+</div>

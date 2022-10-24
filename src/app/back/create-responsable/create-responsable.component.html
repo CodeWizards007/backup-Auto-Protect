@@ -1,0 +1,114 @@
+<div class="card card-warning">
+
+  <div class="card-header">
+    <h3 class="card-title">Ajouter Responsable</h3>
+  </div>
+
+  <div class="card-body">
+    <form role="form" [formGroup]="addresponsable">
+
+
+
+
+      <div class="form-group">
+        <label class="col-form-label" for="us"> Username</label>
+        <input type="text" class="form-control " [ngClass]="(this.addresponsable.controls.username.invalid) ? 'is-invalid' : 'is-valid'"   id="usd" placeholder="Entrer ..." required="required" name="username" formControlName='username' >
+        <div *ngIf="this.addresponsable.controls.username?.invalid && (this.addresponsable.controls.username?.dirty || this.addresponsable.controls.username?.touched)" style="color:red">
+
+          <div *ngIf="this.addresponsable.controls.username?.errors?.['required']" >
+            Nom D'utilisateur est obligatoir
+          </div>
+          <div *ngIf="this.addresponsable.controls.username?.errors?.['minlength']">
+            Nom D'utilisateur au moins 4 characters .
+          </div>
+          <div *ngIf="this.addresponsable.controls.username?.errors?.['maxlength']">
+            Nom D'utilisateur au plus 50 characters .
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-form-label" for="us"> Password</label>
+        <input type="text" class="form-control " [ngClass]="(this.addresponsable.controls.password.invalid) ? 'is-invalid' : 'is-valid'"   id="us" placeholder="Entrer ..." required="required" name="password" formControlName='password' >
+        <div *ngIf="this.addresponsable.controls.password?.invalid && (this.addresponsable.controls.password?.dirty || this.addresponsable.controls.password?.touched)" style="color:red">
+
+          <div *ngIf="this.addresponsable.controls.password?.errors?.['required']" >
+            Mot De Passe est obligatoir
+          </div>
+          <div *ngIf="this.addresponsable.controls.password?.errors?.['minlength']">
+            Mot De Passe au moins 8 characters .
+          </div>
+          <div *ngIf="this.addresponsable.controls.password?.errors?.['maxlength']">
+            Mot De Passe au plus 50 characters .
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label class="col-form-label" for="no"> Nom</label>
+        <input type="text" class="form-control " [ngClass]="(this.addresponsable.controls.nom.invalid) ? 'is-invalid' : 'is-valid'"   id="no" placeholder="Entrer ..." required="required" name="nom" formControlName='nom' >
+        <div *ngIf="this.addresponsable.controls.nom?.invalid && (this.addresponsable.controls.nom?.dirty || this.addresponsable.controls.nom?.touched)" style="color:red">
+
+          <div *ngIf="this.addresponsable.controls.nom?.errors?.['required']" >
+            Nom  est obligatoir
+          </div>
+          <div *ngIf="this.addresponsable.controls.nom?.errors?.['minlength']">
+            Nom  au moins 3 characters .
+          </div>
+          <div *ngIf="this.addresponsable.controls.nom?.errors?.['maxlength']">
+            Nom  au plus 30 characters .
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label class="col-form-label" for="prd"> prenom</label>
+        <input type="text" class="form-control " [ngClass]="(this.addresponsable.controls.prenom.invalid) ? 'is-invalid' : 'is-valid'"   id="prd" placeholder="Entrer ..." required="required" name="prenom" formControlName='prenom' >
+        <div *ngIf="this.addresponsable.controls.prenom?.invalid && (this.addresponsable.controls.prenom?.dirty || this.addresponsable.controls.prenom?.touched)" style="color:red">
+
+          <div *ngIf="this.addresponsable.controls.prenom?.errors?.['required']" >
+            prenom  est obligatoir
+          </div>
+          <div *ngIf="this.addresponsable.controls.prenom?.errors?.['minlength']">
+            prenom  au moins 3 characters .
+          </div>
+          <div *ngIf="this.addresponsable.controls.prenom?.errors?.['maxlength']">
+            prenom  au plus 30 characters .
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-sm-6">
+
+          <div class="form-group">
+            <label>Role</label>
+            <select class="form-control" formControlName='rol'>
+              <option *ngFor="let role of roles" [ngValue]="role"  >{{role}}</option>
+
+            </select>
+
+            <div *ngIf="this.addresponsable.controls.rol?.invalid && (this.addresponsable.controls.rol?.dirty || this.addresponsable.controls.rol?.touched)" style="color:red">
+
+              <div *ngIf="this.addresponsable.controls.rol?.errors?.['required']" >
+                Role du Consultant Obligatoire !
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <input type="submit" class="button-29" value=" Ajouter " style="margin-left: 300px" [disabled]='addresponsable.invalid' (click)="addResponsable(Responsable)"/>
+      <button class="button-29" style="margin-left: 20px" [routerLink]="['../']" >Retour</button>
+    </form>
+  </div>
+
+</div>

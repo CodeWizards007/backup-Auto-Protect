@@ -1,0 +1,36 @@
+<div class="container mt-5">
+
+  <div class="row text-center mt-5 mb-5">
+    <h1>Liste des Administrateurs d'Auto-Protect</h1>
+  </div>
+
+
+  <div class="row mt-5 mb-5">
+    <table class="table">
+      <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Date création</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let a of admins">
+        <th scope="row">{{a.id}}</th>
+        <td>{{a.username}}</td>
+        <td>{{a.nom}}</td>
+        <td>{{a.prenom}}</td>
+        <td>{{a.telephone}}</td>
+        <td>{{a.createdAt.toString().split('T')[0]}}</td>
+      </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
